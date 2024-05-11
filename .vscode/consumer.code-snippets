@@ -1,0 +1,21 @@
+{
+  "Consumer": {
+    "prefix": "consumer",
+    "body": [
+      "import 'package:flutter/material.dart';",
+      "import 'package:flutter_riverpod/flutter_riverpod.dart';",
+      "",
+      "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends ConsumerWidget {",
+      "  const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({super.key});",
+      "",
+      "  static const path = '/${TM_FILENAME_BASE/(.*)/${1:/downcase}/}';",
+      "",
+      "  @override",
+      "  Widget build(BuildContext context, WidgetRef ref) {",
+      "    return Container();${1}",
+      "  }",
+      "}"
+    ],
+    "description": "widget consumer body"
+  }
+}
