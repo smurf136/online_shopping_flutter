@@ -7,8 +7,6 @@
       "class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/} extends StatelessWidget {",
       "  const ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}({super.key});",
       "",
-      "  static const path = '/${TM_FILENAME_BASE/(.*)/${1:/downcase}/}';",
-      "",
       "  @override",
       "  Widget build(BuildContext context) {",
       "    return Container();${1}",
