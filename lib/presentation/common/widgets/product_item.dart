@@ -23,60 +23,73 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: cardWidth,
+    return CupertinoButton(
+      onPressed: () {
+        ProductDetailPage.show(
+          context,
+          id: id,
+          imageUrl: imageUrl,
+          price: price,
+          productName: productName,
+        );
+      },
       padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-      clipBehavior: Clip.antiAlias,
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(12)),
-        color: Colors.white,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: cardWidth,
-            height: cardWidth,
-            child: Stack(
-              children: [
-                CachedNetworkImage(
-                  imageUrl: imageUrl,
-                  width: cardWidth,
-                  height: cardWidth,
-                  fit: BoxFit.cover,
-                ),
-                Positioned(
-                  top: 8,
-                  right: 8,
-                  child: SaveButton(
-                    id: id,
-                    productName: productName,
-                    imageUrl: imageUrl,
-                    price: price,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.fromLTRB(4, 8, 4, 8),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
+      minSize: 0,
+      child: Container(
+        width: cardWidth,
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+        clipBehavior: Clip.antiAlias,
+        decoration: const BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
+          color: Colors.white,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: cardWidth,
+              height: cardWidth,
+              child: Stack(
                 children: [
-                  Text(
-                    productName,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
+                  CachedNetworkImage(
+                    imageUrl: imageUrl,
+                    width: cardWidth,
+                    height: cardWidth,
+                    fit: BoxFit.cover,
                   ),
-                  Text('$price \$', style: Theme.of(context).textTheme.labelMedium),
+                  Positioned(
+                    top: 8,
+                    right: 8,
+                    child: SaveButton(
+                      id: id,
+                      productName: productName,
+                      imageUrl: imageUrl,
+                      price: price,
+                    ),
+                  ),
                 ],
               ),
             ),
-          )
-        ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(4, 8, 4, 8),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      productName,
+                      style: Theme.of(context).textTheme.bodyMedium,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    Text('$price \$', style: Theme.of(context).textTheme.labelMedium),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
