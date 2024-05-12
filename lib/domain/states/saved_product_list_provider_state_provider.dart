@@ -1,3 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final savedProductListStateProvider = StateProvider((ref) => []);
+import '../models/product_model.dart';
+
+final savedProductListStateProvider = StateProvider((ref) => <ProductModel>[]);
