@@ -17,7 +17,7 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: {
-        HomePageTabContent.home: const HomeTabContent(),
+        HomePageTabContent.home: HomeTabContent(),
         HomePageTabContent.saved: const SavedTabContent(),
         HomePageTabContent.cart: const CartTabContent(),
       }[ref.watch(currentHomePageTabContentStateProvider)],
