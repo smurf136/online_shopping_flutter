@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../domain/models/product_model.dart';
 import '../../../domain/states/cart_product_state_provider.dart';
 import '../../common/widgets/custom_outline_button.dart';
 import '../../common/widgets/custom_snackbar.dart';
@@ -92,7 +91,7 @@ class ProductDetailPage extends StatelessWidget {
 
                       _currentCart[id] = (_currentCart[id] ?? 0) + 1;
 
-                      ref.read(cartProductStateProvider.notifier).state = _currentCart;
+                      ref.read(cartProductStateProvider.notifier).state = {..._currentCart};
 
                       CustomSnackbar.show(
                         context,
