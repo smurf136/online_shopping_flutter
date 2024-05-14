@@ -7,9 +7,7 @@ abstract class CustomSnackbar {
   }) {
     ScaffoldMessenger.of(context).clearSnackBars();
 
-    final snackBar = SnackBar(
-      content: Text(title),
-    );
+    final snackBar = SnackBar(content: Text(title));
 
     ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }

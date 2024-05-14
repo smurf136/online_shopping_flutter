@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'presentation/common/pages/home_page.dart';
+import 'presentation/payment/pages/payment_page.dart';
 import 'presentation/product/pages/product_detail_page.dart';
 
 void main() {
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           HomePage.path: (context) => const HomePage(),
+          PaymentPage.path: (context) => const PaymentPage(),
         },
         onGenerateRoute: (RouteSettings settings) {
           final route = settings.name ?? '';
