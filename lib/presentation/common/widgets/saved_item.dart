@@ -102,7 +102,7 @@ class SavedItem extends ConsumerWidget {
                     border: Border.all(color: Colors.grey, width: 1),
                   ),
                   child: Text(
-                    (amountInCart[id] ?? 0).toString(),
+                    (amountInCart[id]?.amount ?? 0).toString(),
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                 ),

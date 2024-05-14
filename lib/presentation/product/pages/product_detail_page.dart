@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../../domain/models/cart_model.dart';
+import '../../../domain/models/product_model.dart';
 import '../../../domain/states/cart_product_state_provider.dart';
 import '../../common/widgets/custom_outline_button.dart';
 import '../../common/widgets/custom_snackbar.dart';
@@ -89,13 +91,28 @@ class ProductDetailPage extends StatelessWidget {
                     onPressed: () {
                       final _currentCart = ref.read(cartProductStateProvider);
 
-                      _currentCart[id] = (_currentCart[id] ?? 0) + 1;
+                      if (_currentCart[id] != null) {
+                        _currentCart[id] = CartModel(
+                          amount: _currentCart[id]!.amount + 1,
+                          product: _currentCart[id]!.product,
+                        );
+                      } else {
+                        _currentCart[id] = CartModel(
+                          amount: 1,
+                          product: ProductModel(
+                            id: id,
+                            imageUrl: imageUrl,
+                            name: productName,
+                            price: price,
+                          ),
+                        );
+                      }
 
                       ref.read(cartProductStateProvider.notifier).state = {..._currentCart};
 
                       CustomSnackbar.show(
                         context,
-                        title: 'Add product to cart success! ${(_currentCart[id] ?? 0) > 0 ? 'current: ${_currentCart[id]}' : ''}',
+                        title: 'Add product to cart success! ${(_currentCart[id]?.amount ?? 0) > 0 ? 'current: ${_currentCart[id]!.amount}' : ''}',
                       );
                     },
                     alignment: Alignment.center,
