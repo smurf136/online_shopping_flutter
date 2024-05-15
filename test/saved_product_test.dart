@@ -4,7 +4,6 @@ import 'package:online_shopping_flutter/domain/states/saved_product_list_provide
 import 'package:online_shopping_flutter/main.dart';
 import 'package:online_shopping_flutter/presentation/common/widgets/saved_button.dart';
 import 'package:online_shopping_flutter/presentation/common/widgets/saved_item.dart';
-import 'package:online_shopping_flutter/presentation/common/widgets/saved_tab_content.dart';
 
 void main() {
   group('saved product', () {

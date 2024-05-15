@@ -1,13 +1,9 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:online_shopping_flutter/domain/states/cart_product_state_provider.dart';
-import 'package:online_shopping_flutter/domain/states/saved_product_list_provider_state_provider.dart';
 import 'package:online_shopping_flutter/main.dart';
 import 'package:online_shopping_flutter/presentation/common/widgets/cart_item.dart';
-import 'package:online_shopping_flutter/presentation/common/widgets/custom_outline_button.dart';
 import 'package:online_shopping_flutter/presentation/common/widgets/product_item.dart';
-import 'package:online_shopping_flutter/presentation/common/widgets/saved_button.dart';
 import 'package:online_shopping_flutter/presentation/product/pages/product_detail_page.dart';
 
 void main() {
