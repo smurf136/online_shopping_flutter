@@ -41,6 +41,9 @@ class ProductDetailPage extends StatelessWidget {
     });
   }
 
+  static ValueKey get backButtonKey => const ValueKey('back_button');
+  static ValueKey get addToCartButtonKey => const ValueKey('add_to_cart_button');
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
@@ -52,6 +55,7 @@ class ProductDetailPage extends StatelessWidget {
         backgroundColor: Colors.white,
         appBar: AppBar(
           leading: CupertinoButton(
+            key: backButtonKey,
             onPressed: () {
               ScaffoldMessenger.of(context).clearSnackBars();
               Navigator.of(context).pop();
@@ -88,6 +92,7 @@ class ProductDetailPage extends StatelessWidget {
               Consumer(
                 builder: (context, ref, _) {
                   return CustomOutlineButton(
+                    key: addToCartButtonKey,
                     onPressed: () {
                       final _currentCart = ref.read(cartProductStateProvider);
 
