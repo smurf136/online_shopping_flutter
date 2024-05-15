@@ -6,8 +6,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../../../domain/models/product_model.dart';
 import '../../../domain/states/saved_product_list_provider_state_provider.dart';
 
-class SaveButton extends ConsumerWidget {
-  const SaveButton({
+class SavedButton extends ConsumerWidget {
+  const SavedButton({
     super.key,
     required this.id,
     required this.productName,

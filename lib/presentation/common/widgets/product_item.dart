@@ -60,7 +60,7 @@ class ProductItem extends StatelessWidget {
                   Positioned(
                     top: 8,
                     right: 8,
-                    child: SaveButton(
+                    child: SavedButton(
                       id: id,
                       productName: productName,
                       imageUrl: imageUrl,

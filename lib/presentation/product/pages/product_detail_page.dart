@@ -74,7 +74,7 @@ class ProductDetailPage extends StatelessWidget {
                 margin: const EdgeInsets.fromLTRB(0, 12, 0, 12),
                 alignment: Alignment.centerRight,
                 // save button
-                child: SaveButton(
+                child: SavedButton(
                   id: id,
                   imageUrl: imageUrl,
                   price: price,
